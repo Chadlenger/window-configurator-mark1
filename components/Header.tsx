@@ -5,7 +5,7 @@ export default function Header(){
         <header className="bg-white dark:bg-black shadow-lg">
             <div className="max-w-3xl mx-auto px-4 py-6">
                 <Image 
-                src="/images/logo.png" 
+                src="/images/logo.svg" 
                 alt="Logo Thomas Concept" 
                 width={220} height={120} 
                 priority={true}

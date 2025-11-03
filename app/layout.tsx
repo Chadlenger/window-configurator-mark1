@@ -9,6 +9,7 @@ const geistMono = Geist_Mono({variable: "--font-geist-mono", subsets: ["latin"],
 export const metadata: Metadata = {
   title: "Thomas Concept - Window Configurator",
   description: "Obtineti devisul pentru ferestrele tale",
+  icons: {icon: "/images/logo_onglet.svg",}
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="ro">
       <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-white antialiased`}>
         <Header />
-        <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-8 mt-[clamp(65px,8vh,175px)] max-w-screen-xl mx-auto">
+        <main className="w-full py-4 mt-[clamp(20px,4vh,80px)]">
           {children}
         </main>
       </body>

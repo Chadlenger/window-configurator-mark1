@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="pt-24 flex flex-col items-center gap-6">
-      <h1 className="text-4xl font-semibold">
+      <h1 className="step-heading">
         Bun venit la Configuratorul de Ferestre Thomas Concept
       </h1>
       <p className="text-lg">

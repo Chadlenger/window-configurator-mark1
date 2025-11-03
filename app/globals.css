@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #163ABA; /* Ajoutez cette ligne */
+
 }
 
 @theme inline {
@@ -10,13 +12,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 @layer utilities {
@@ -35,4 +30,99 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: sans-serif;
+}
+
+
+/* APP NAVIGATION STYLES */
+.btn-nav-back {
+  position: relative;
+  display: inline-block;
+  padding: 0 24px;
+  width: 152px;
+  height: 57px;
+  line-height: 57px;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid #3b82f6;
+  color: #000;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-nav-back span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.btn-nav-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  bottom: 0;
+  left: 0;
+  border-right: 50px solid transparent;
+  border-bottom: 57px solid #3D5BFF;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn-nav-back:hover::before {
+  transform: translateX(0);
+}
+
+.btn-nav-next {
+  position: relative;
+  display: inline-block;
+  padding: 0 24px;
+  width: 152px;
+  height: 57px;
+  line-height: 57px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  transition: color 0.3s ease;
+  z-index: 1;
+  
+}
+
+.btn-nav-next span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.btn-nav-next::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  bottom: 0;
+  left: 0;
+  border-right: 50px solid transparent;
+  border-bottom: 57px solid #3D5BFF;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn-nav-next:hover::before {
+  transform: translateX(0);
+}
+
+.btn-nav-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* STEP HEADING STYLES */
+.step-heading {
+  font-size: 2.25rem; 
+  font-weight: 600; 
 }
