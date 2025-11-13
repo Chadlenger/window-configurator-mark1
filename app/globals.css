@@ -126,3 +126,40 @@ body {
   font-size: 2.25rem; 
   font-weight: 600; 
 }
+
+
+.range-slider {
+  -webkit-appearance: none;
+  width: 400px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  outline: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 56px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: 17px;
+  cursor: pointer;
+  border: none;
+  margin-top: -13px;
+  position: relative;
+}
+
+.range-slider::-moz-range-thumb {
+  width: 56px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: 17px;
+  cursor: pointer;
+  border: none;
+}
+
+.length-display {
+  @apply box-border flex flex-row justify-center items-center p-3 gap-[10px] w-[150px] h-12 bg-[rgba(22,58,186,0.12)] border-2 text-black;
+  border-color: var(--color-primary);
+}

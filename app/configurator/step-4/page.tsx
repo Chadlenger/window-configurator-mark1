@@ -8,19 +8,19 @@ import RangeSlider from '@/components/RangeSlider'
 
 import { config } from '@/lib/config'
 
-export default function Step3Page() {
+export default function Step4Page() {
     const router = useRouter()
 
     return (
         <div className="flex flex-col items-center gap-8">
             <h2 className="step-heading">
-                Alegeți <span className="text-primary">Lungimea</span> Ferestrei
+                Alegeți <span className="text-primary">Inaltimea</span> Ferestrei
             </h2>
 
-            <RangeSlider min={100} max={300} step={1} label="Lungimea Ferestrei 100 - 300 cm" onChange={(value) => {config.width = value}} />
+            <RangeSlider min={50} max={200} step={1} label="Inaltimea Ferestrei 50 - 200 cm" onChange={(value) => {config.height = value}} />
 
             <AppNavigation
-            backPath="/configurator/step-2"
+            backPath="/configurator/step-3"
             onNext={() => {router.push('/configurator/step-4')}}
         />
         </div>

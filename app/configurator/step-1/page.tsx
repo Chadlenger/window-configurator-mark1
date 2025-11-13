@@ -13,14 +13,15 @@ export default function Step1Page() {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <h2 className="step-heading">Alegeți tipul de fereastră</h2>
+      <h2 className="step-heading">Alegeți <span className="text-primary">Tipul</span> de fereastră</h2>
       
       <OptionCardGrid
         options={step1Options}
         selectedIndex={selectedOptionIndex}
         onSelect={(index) => {
-            //alert('Élément sélectionné : ' + step1Options[index].label)
-            setSelectedOptionIndex(index)  
+            //alert('element selected : ' + step1Options[index].label)
+            setSelectedOptionIndex(index)
+            config.type = step1Options[index].label
           }}
 
 
@@ -31,11 +32,7 @@ export default function Step1Page() {
 
       <AppNavigation
         backDisabled={true}  
-        nextLabel="Următorul"
-        backLabel="Înapoi"
-        onNext={() => {
-          router.push('/configurator/step-2')
-        }}
+        onNext={() => {router.push('/configurator/step-2')}}
       />
     </div>
   )

@@ -16,8 +16,8 @@ export default function AppNavigation({
   onBack,
   backDisabled,
   backPath,
-  nextLabel = 'Suivant',
-  backLabel = 'Retour',
+  nextLabel = 'Urmatorul',
+  backLabel = 'Inapoi',
 }: AppNavigationProps) {
   const router = useRouter()
 

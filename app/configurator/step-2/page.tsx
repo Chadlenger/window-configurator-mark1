@@ -33,11 +33,7 @@ export default function Step2Page() {
 
             <AppNavigation  
                 backPath="/configurator/step-1"
-                nextLabel="Următorul"
-                backLabel="Înapoi"
-                onNext={() => {
-                router.push('/configurator/step-2')
-                }}
+                onNext={() => {router.push('/configurator/step-3')}}
             />
         </div>
     );
