@@ -1,12 +1,13 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { step5Options } from '@/data/step5-options'
 import AppNavigation from '@/components/AppNavigation'
 import RangeSlider from '@/components/RangeSlider'
-
 import { config } from '@/lib/config'
 
-export default function Step4Page() {
+export default function Step5Page() {
     const router = useRouter()
 
     return (
@@ -18,8 +19,8 @@ export default function Step4Page() {
             <RangeSlider min={50} max={200} step={1} label="Inaltimea Ferestrei 50 - 200 cm" onChange={(value) => {config.height = value}} />
 
             <AppNavigation
-            backPath="/configurator/step-3"
-            onNext={() => {router.push('/configurator/step-4')}}
+            backPath="/configurator/step-4"
+            onNext={() => {router.push('/configurator/step-5')}}
         />
         </div>
         
