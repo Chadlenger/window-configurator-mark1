@@ -39,7 +39,7 @@ export default function Step6Page() {
         backLabel="Înapoi"
         
         onNext={() => {
-          router.push('/configurator/summary')
+          router.push('/configurator/final-step')
         }}
       />
     </div>
