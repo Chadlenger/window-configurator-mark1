@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { step2Options } from '@/data/step2-options'
+import { WindowMaterialOptions } from '@/data/steps-options'
 import AppNavigation from '@/components/AppNavigation'
 import OptionCardGrid from '@/components/OptionCardGrid'
 import { config } from '@/lib/config'
@@ -18,12 +18,12 @@ export default function Step2Page() {
             </h2>
 
             <OptionCardGrid
-              options={step2Options}
+              options={WindowMaterialOptions}
               selectedIndex={selectedOptionIndex}
               onSelect={(index) => {
                 setSelectedOptionIndex(index)
                 //alert('Élément sélectionné : ' + step2Options[index].label)
-                config.material = step2Options[index].label
+                config.material = WindowMaterialOptions[index].label
                 
               }}
               imageWidth={150}

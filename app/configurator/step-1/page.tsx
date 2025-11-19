@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { step1Options } from '@/data/step1-options'
+import { WindowTypeOptions } from '@/data/steps-options'
 import AppNavigation from '@/components/AppNavigation'
 import OptionCardGrid from '@/components/OptionCardGrid'
 import { config } from '@/lib/config'
@@ -16,12 +16,12 @@ export default function Step1Page() {
       <h2 className="step-heading">Alegeți <span className="text-primary">Tipul</span> de fereastră</h2>
       
       <OptionCardGrid
-        options={step1Options}
+        options={WindowTypeOptions}
         selectedIndex={selectedOptionIndex}
         onSelect={(index) => {
             //alert('element selected : ' + step1Options[index].label)
             setSelectedOptionIndex(index)
-            config.type = step1Options[index].label
+            config.type = WindowTypeOptions[index].label
           }}
 
 

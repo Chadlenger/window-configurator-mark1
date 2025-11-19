@@ -6,7 +6,12 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
+# to test in localhost
+npm run build 
+# to ensure project compile correctly for production on Vercel
+
+
+
 yarn dev
 # or
 pnpm dev

@@ -7,17 +7,18 @@ import OptionCardGrid from '@/components/OptionCardGrid'
 import { ColorMaterialOptions } from '@/data/steps-options'
 import { config } from '@/lib/config'
 
-export default function Step5Page() {
+export default function Step6Page() {
   const router = useRouter()
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(
-    ColorMaterialOptions.findIndex((option) => option.label === config.colorExterior)
+    ColorMaterialOptions.findIndex(
+      (option) => option.label === config.colorInterior
+    )
   )
 
   return (
     <div className="flex flex-col items-center gap-8">
-      
       <h2 className="step-heading text-center">
-        Alegeți <span className="text-primary">culoarea exterioară</span> a ferestrelor
+        Alegeți <span className="text-primary">culoarea interioară</span> a ferestrelor
       </h2>
 
       <OptionCardGrid
@@ -25,7 +26,7 @@ export default function Step5Page() {
         selectedIndex={selectedOptionIndex}
         onSelect={(index) => {
           setSelectedOptionIndex(index)
-          config.colorExterior = ColorMaterialOptions[index].label
+          config.colorInterior = ColorMaterialOptions[index].label
         }}
         imageWidth={90}
         imageHeight={90}
@@ -33,11 +34,12 @@ export default function Step5Page() {
       />
 
       <AppNavigation
-        backPath="/configurator/step-4"
-        nextLabel="Finalizați"
+        backPath="/configurator/step-5"
+        nextLabel="Finalizează"
         backLabel="Înapoi"
+        
         onNext={() => {
-          router.push('/configurator/step-6')
+          router.push('/configurator/summary')
         }}
       />
     </div>

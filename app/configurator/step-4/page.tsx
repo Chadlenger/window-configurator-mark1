@@ -19,7 +19,7 @@ export default function Step4Page() {
 
             <AppNavigation
             backPath="/configurator/step-3"
-            onNext={() => {router.push('/configurator/step-4')}}
+            onNext={() => {router.push('/configurator/step-5')}}
         />
         </div>
         
