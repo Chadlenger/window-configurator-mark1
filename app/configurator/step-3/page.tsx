@@ -8,6 +8,7 @@ import { config } from '@/lib/config'
 
 export default function Step3Page() {
     const router = useRouter()
+    config.width = 200
 
     return (
         <div className="flex flex-col items-center gap-8">

@@ -1,8 +1,8 @@
 export const WindowTypeOptions = [
-    { label: 'Fereastră simplă', img: '/images/windows-type/simple-window.png' },
-    { label: 'Usă Fereastră', img: '/images/windows-type/door-window.png' },
-    { label: 'Fereastră fixă', img: '/images/windows-type/fixed-window.png' },
-    { label: 'Fereastră culisantă', img: '/images/windows-type/sliding-window.png' },
+    { label: 'Fereastra simpla', img: '/images/windows-type/simple-window.png' },
+    { label: 'Usa Fereastra', img: '/images/windows-type/door-window.png' },
+    { label: 'Fereastra fixa', img: '/images/windows-type/fixed-window.png' },
+    { label: 'Fereastra culisanta', img: '/images/windows-type/sliding-window.png' },
   ]
   
   export const WindowMaterialOptions = [
@@ -12,9 +12,9 @@ export const WindowTypeOptions = [
   ]
   
   export const ColorMaterialOptions = [
-    { label: 'ALB RAL', img: '/images/window-color/Blanc_Ral.svg', colorCode: '#FFFFFF' },
-    { label: 'GRI ANTRACIT RAL', img: '/images/window-color/Gris_Antracite.svg', colorCode: '#363D40' },
-    { label: 'GRI TIP RAL', img: '/images/window-color/Gris_Type_Ral.svg', colorCode: '#505358' },
-    { label: 'GRI DESCHIS RAL', img: '/images/window-color/Gris_Claire_Ral.svg', colorCode: '#8E969E' },
-    { label: 'NEGRU GRAFIT RAL', img: '/images/window-color/Noir_Graphite.svg', colorCode: '#1C1C1C' },
+    { label: 'Alb Ral', img: '/images/window-color/Blanc_Ral.svg', colorCode: '#FFFFFF' },
+    { label: 'Gri Antracit Ral', img: '/images/window-color/Gris_Antracite.svg', colorCode: '#363D40' },
+    { label: 'Gri Tip Ral', img: '/images/window-color/Gris_Type_Ral.svg', colorCode: '#505358' },
+    { label: 'Gri Deschis Ral', img: '/images/window-color/Gris_Claire_Ral.svg', colorCode: '#8E969E' },
+    { label: 'Negru Grafit Ral', img: '/images/window-color/Noir_Graphite.svg', colorCode: '#1C1C1C' },
   ]

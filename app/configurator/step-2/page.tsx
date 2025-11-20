@@ -14,7 +14,7 @@ export default function Step2Page() {
     return (
         <div className="flex flex-col items-center gap-8">
             <h2 className="step-heading">
-              Ce <span className="text-primary">material</span> vă convine?
+              Ce <span className="text-primary">material</span> va convine?
             </h2>
 
             <OptionCardGrid
@@ -33,6 +33,7 @@ export default function Step2Page() {
 
             <AppNavigation  
                 backPath="/configurator/step-1"
+                nextDisabled={selectedOptionIndex === null}
                 onNext={() => {router.push('/configurator/step-3')}}
             />
         </div>

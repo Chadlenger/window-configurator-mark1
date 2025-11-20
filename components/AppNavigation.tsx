@@ -6,6 +6,7 @@ type AppNavigationProps = {
   onNext?: () => void | Promise<void>
   onBack?: () => void
   backDisabled?: boolean
+  nextDisabled?: boolean
   backPath?: string
   nextLabel?: string
   backLabel?: string
@@ -15,6 +16,7 @@ export default function AppNavigation({
   onNext,
   onBack,
   backDisabled,
+  nextDisabled = false,
   backPath,
   nextLabel = 'Urmatorul',
   backLabel = 'Inapoi',
@@ -38,7 +40,8 @@ export default function AppNavigation({
       )}
       <button
         onClick={onNext}
-        className="btn-nav-next"
+        disabled={nextDisabled}
+        className={`btn-nav-next ${nextDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         <span>{nextLabel}</span>
       </button>

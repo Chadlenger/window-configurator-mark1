@@ -13,7 +13,7 @@ export default function Step1Page() {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <h2 className="step-heading">Alegeți <span className="text-primary">Tipul</span> de fereastră</h2>
+      <h2 className="step-heading">Alegeți <span className="text-primary">Tipul</span> de fereastra</h2>
       
       <OptionCardGrid
         options={WindowTypeOptions}
@@ -32,6 +32,7 @@ export default function Step1Page() {
 
       <AppNavigation
         backDisabled={true}  
+        nextDisabled={selectedOptionIndex === null}
         onNext={() => {router.push('/configurator/step-2')}}
       />
     </div>

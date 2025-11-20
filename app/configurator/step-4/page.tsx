@@ -8,6 +8,7 @@ import { config } from '@/lib/config'
 
 export default function Step4Page() {
     const router = useRouter()
+    config.height = 125
 
     return (
         <div className="flex flex-col items-center gap-8">

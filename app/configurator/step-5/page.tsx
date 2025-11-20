@@ -17,7 +17,7 @@ export default function Step5Page() {
     <div className="flex flex-col items-center gap-8">
       
       <h2 className="step-heading text-center">
-        Alegeți <span className="text-primary">culoarea exterioară</span> a ferestrelor
+        Alegeți <span className="text-primary">culoarea exterioara</span> a ferestrelor
       </h2>
 
       <OptionCardGrid
@@ -34,8 +34,7 @@ export default function Step5Page() {
 
       <AppNavigation
         backPath="/configurator/step-4"
-        nextLabel="Finalizați"
-        backLabel="Înapoi"
+        nextDisabled={selectedOptionIndex === null}
         onNext={() => {
           router.push('/configurator/step-6')
         }}
