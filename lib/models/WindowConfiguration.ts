@@ -5,6 +5,7 @@ export class WindowConfiguration {
     private _material?: string;
     private _colorExterior?: string;
     private _colorInterior?: string;
+    private _numberOfPanels?: string;
   
     constructor() {}
   
@@ -14,6 +15,7 @@ export class WindowConfiguration {
     get material(): string | undefined {return this._material;}
     get colorExterior(): string | undefined {return this._colorExterior;}
     get colorInterior(): string | undefined {return this._colorInterior;}
+    get numberOfPanels(): string | undefined {return this._numberOfPanels;}
   
     set type(value: string | undefined) {this._type = value;}
     set height(value: number | undefined) {this._height = value;}
@@ -21,11 +23,17 @@ export class WindowConfiguration {
     set material(value: string | undefined) {this._material = value;}
     set colorExterior(value: string | undefined) {this._colorExterior = value;}
     set colorInterior(value: string | undefined) {this._colorInterior = value;}
+    set numberOfPanels(value: string | undefined) {this._numberOfPanels = value;}
   
-    isComplete(): boolean {return !!(
+    isComplete(): boolean {
+      // Vérifier les champs obligatoires de base
+      const baseComplete = !!(
         this._type && this._height &&
         this._width && this._material &&
         this._colorExterior && this._colorInterior
-      );
+      )
+      if (!baseComplete) return false
+      if (this._type === 'Usa Fereastra' || this._type === 'Fereastra fixa') {return true}
+      return !!this._numberOfPanels
     }
 }

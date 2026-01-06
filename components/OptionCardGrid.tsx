@@ -14,6 +14,7 @@ type OptionCardGridProps = {
   imageWidth: number
   imageHeight: number
   imageMaxWidth?: string
+  fixedImageHeight?: string
 }
 
 export default function OptionCardGrid({
@@ -23,6 +24,7 @@ export default function OptionCardGrid({
   imageWidth,
   imageHeight,
   imageMaxWidth = 'max-w-[314px]',
+  fixedImageHeight,
 }: OptionCardGridProps) {
   return (
     <div 
@@ -52,13 +54,13 @@ export default function OptionCardGrid({
             </div>
           )}
           
-          <div className={`relative w-full ${imageMaxWidth} h-auto`}>
+          <div className={`relative w-full ${fixedImageHeight ? '' : imageMaxWidth} ${fixedImageHeight || 'h-auto'} flex items-center justify-center`}>
             <Image
               src={option.img}
               alt={option.label}
               width={imageWidth}
               height={imageHeight}
-              className="w-full h-auto object-contain"
+              className={`w-full ${fixedImageHeight ? 'h-full' : 'h-auto'} object-contain`}
             />
           </div>
           <span className="text-center font-medium">{option.label}</span>

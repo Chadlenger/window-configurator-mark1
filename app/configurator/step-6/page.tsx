@@ -37,7 +37,12 @@ export default function Step6Page() {
         backPath="/configurator/step-5"
         nextDisabled={selectedOptionIndex === null}
         onNext={() => {
-          router.push('/configurator/final-step')
+          // Si "Usa Fereastra" ou "Fereastra fixa", rediriger directement vers final-step
+          if (config.type === 'Usa Fereastra' || config.type === 'Fereastra fixa') {
+            router.push('/configurator/final-step')
+          } else {
+            router.push('/configurator/step-7')
+          }
         }}
       />
     </div>

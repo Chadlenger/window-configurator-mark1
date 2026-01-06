@@ -12,4 +12,5 @@ export const configFields: ConfigField[] = [
     { label: 'Inaltimea', getValue: (config) => config.height ? `${config.height} cm` : null },
     { label: 'Culoarea exterioara', getValue: (config) => config.colorExterior || null },
     { label: 'Culoarea interioara', getValue: (config) => config.colorInterior || null },
+    { label: 'Numarul de panouri', getValue: (config) => config.numberOfPanels || null },
 ]

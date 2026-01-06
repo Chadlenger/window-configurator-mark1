@@ -18,3 +18,9 @@ export const WindowTypeOptions = [
     { label: 'Gri Deschis Ral', img: '/images/window-color/Gris_Claire_Ral.svg', colorCode: '#8E969E' },
     { label: 'Negru Grafit Ral', img: '/images/window-color/Noir_Graphite.svg', colorCode: '#1C1C1C' },
   ]
+
+  export const NumberOfPanels = [
+    { label: '1 panou', img: '/images/window_panels/1_window.svg', compatibleTypes: ['Fereastra simpla'] },
+    { label: '2 panouri', img: '/images/window_panels/2_windows.svg', compatibleTypes: ['Fereastra simpla', 'Fereastra culisanta'] },
+    { label: '3 panouri', img: '/images/window_panels/3_windows.svg', compatibleTypes: ['Fereastra culisanta', 'Fereastra simpla'] },
+  ]
