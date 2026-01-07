@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import AppNavigation from '@/components/AppNavigation'
 import OptionCardGrid from '@/components/OptionCardGrid'
 import { NumberOfPanels } from '@/data/steps-options'
+import { getOpeningTypeOptions } from '@/data/opening-options'
 import { config } from '@/lib/config'
 
 export default function Step7Page() {
@@ -20,7 +21,6 @@ export default function Step7Page() {
     return null
   }
   
-  // Vérifier que les étapes précédentes sont complètes et rediriger si nécessaire
   useEffect(() => {
     const missingStep = getMissingStep()
     if (missingStep) {
@@ -39,11 +39,16 @@ export default function Step7Page() {
     if (getMissingStep()) {
       return
     }
-    // Si porte fenêtre ou fenêtre fixe, ou si aucun panneau disponible, rediriger vers final-step
     if (config.type === 'Usa Fereastra' || config.type === 'Fereastra fixa' || availablePanels.length === 0) {
       router.push('/configurator/final-step')
     }
   }, [router, availablePanels.length, config.type])
+
+  useEffect(() => {
+    if (config.numberOfPanels) {
+      const openingOptions = getOpeningTypeOptions(config.type, config.numberOfPanels)
+    }
+  }, [config.numberOfPanels, config.type])
 
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(
     availablePanels.findIndex(
@@ -77,7 +82,12 @@ export default function Step7Page() {
         backPath="/configurator/step-6"
         nextDisabled={selectedOptionIndex === null}
         onNext={() => {
-          router.push('/configurator/final-step')
+          const openingOptions = getOpeningTypeOptions(config.type, availablePanels[selectedOptionIndex!]?.label)
+          if (openingOptions.length > 0) {
+            router.push('/configurator/step-8')
+          } else {
+            router.push('/configurator/final-step')
+          }
         }}
       />
     </div>
