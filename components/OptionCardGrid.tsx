@@ -15,6 +15,7 @@ type OptionCardGridProps = {
   imageHeight: number
   imageMaxWidth?: string
   fixedImageHeight?: string
+  cardHeight?: string
 }
 
 export default function OptionCardGrid({
@@ -25,6 +26,7 @@ export default function OptionCardGrid({
   imageHeight,
   imageMaxWidth = 'max-w-[314px]',
   fixedImageHeight,
+  cardHeight,
 }: OptionCardGridProps) {
   return (
     <div 
@@ -35,13 +37,13 @@ export default function OptionCardGrid({
         <div
           key={index}
           onClick={() => onSelect(index)}
-          className={`relative flex flex-col items-center gap-4 p-4 border-2 transition-all cursor-pointer ${
+          className={`relative flex flex-col items-center justify-center gap-4 p-4 border-2 transition-all cursor-pointer ${
             selectedIndex === index
               ? 'border-primary shadow-lg'
               : 'border-transparent hover:border-blue-500 shadow-lg hover:shadow-2xl'
           }`}
+          style={cardHeight ? { height: cardHeight } : undefined}
         >
-          {/* Coche de sélection */}
           {selectedIndex === index && (
             <div className="absolute -top-3.5 bg-primary rounded-full p-1.5 flex items-center justify-center z-10">
               <Image
@@ -63,7 +65,7 @@ export default function OptionCardGrid({
               className={`w-full ${fixedImageHeight ? 'h-full' : 'h-auto'} object-contain`}
             />
           </div>
-          <span className="text-center font-medium">{option.label}</span>
+          <span className="mb-2 mt-2 text-xl text-center" style={{ fontWeight: 400 }}>{option.label}</span>
         </div>
       ))}
     </div>

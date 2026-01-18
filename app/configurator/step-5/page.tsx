@@ -30,6 +30,7 @@ export default function Step5Page() {
         imageWidth={90}
         imageHeight={90}
         imageMaxWidth="max-w-[120px]"
+        cardHeight="242px"
       />
 
       <AppNavigation

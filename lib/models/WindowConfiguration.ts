@@ -8,7 +8,10 @@ export class WindowConfiguration {
     private _numberOfPanels?: string;
     private _openingType?: string;
   
-    constructor() {}
+    constructor() {
+        this._width = 200;
+        this._height = 125;
+    }
   
     get type(): string | undefined {return this._type;}
     get height(): number | undefined {return this._height;}

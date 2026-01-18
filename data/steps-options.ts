@@ -6,9 +6,21 @@ export const WindowTypeOptions = [
   ]
   
   export const WindowMaterialOptions = [
-    { label: 'Aluminium', img: '/images/window-material/aluminium.png' },
-    { label: 'PVC', img: '/images/window-material/pvc.png' },
-    { label: 'Lemn', img: '/images/window-material/wood.png' },
+    { 
+      label: 'Aluminium', 
+      img: '/images/window-material/aluminium.png',
+      advice: 'Aluminiumul este un material rezistent si durabil, ideal pentru ferestre moderne cu izolare termica excelenta si mentenanta minima.'
+    },
+    { 
+      label: 'PVC', 
+      img: '/images/window-material/pvc.png',
+      advice: 'PVC-ul este cel mai popular material pentru ferestre, oferind un raport calitate-pret excelent si izolare termica si fonica buna.'
+    },
+    { 
+      label: 'Lemn', 
+      img: '/images/window-material/wood.png',
+      advice: 'Lemnul ofera un aspect natural si cald, perfect pentru case traditionale, dar necesita mai multa mentenanta pentru a pastra calitatea.'
+    },
   ]
   
   export const ColorMaterialOptions = [

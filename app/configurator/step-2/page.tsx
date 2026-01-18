@@ -22,7 +22,6 @@ export default function Step2Page() {
               selectedIndex={selectedOptionIndex}
               onSelect={(index) => {
                 setSelectedOptionIndex(index)
-                //alert('Élément sélectionné : ' + step2Options[index].label)
                 config.material = WindowMaterialOptions[index].label
                 
               }}

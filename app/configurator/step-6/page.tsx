@@ -31,13 +31,13 @@ export default function Step6Page() {
         imageWidth={90}
         imageHeight={90}
         imageMaxWidth="max-w-[120px]"
+        cardHeight="242px"
       />
 
       <AppNavigation
         backPath="/configurator/step-5"
         nextDisabled={selectedOptionIndex === null}
         onNext={() => {
-          // Si "Usa Fereastra" ou "Fereastra fixa", rediriger directement vers final-step
           if (config.type === 'Usa Fereastra' || config.type === 'Fereastra fixa') {
             router.push('/configurator/final-step')
           } else {
