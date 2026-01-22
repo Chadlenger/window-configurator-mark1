@@ -3,15 +3,29 @@
 import {useRouter} from 'next/navigation'
 import AppForm from '@/components/AppForm'
 import ConfigDisplay from '@/components/ConfigDisplay'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import { config } from '@/lib/config'
 
 export default function final_step() {
     const router = useRouter()
-
+    const [isReady, setIsReady] = useState(false)
     useEffect(() => {
-        if (!config.isComplete()) {router.push('/configurator/step-1')}
-    }, [router])
+        const TEST_MODE = false //set to true if testing : )  
+        
+        if (TEST_MODE && !config.isComplete()) {
+            config.type = 'Fereastra simpla'  
+            config.material = 'PVC'
+            config.width = 200
+            config.height = 125
+            config.colorExterior = 'Gri Tip Ral'
+            config.colorInterior = 'Gri Deschis Ral'
+            config.numberOfPanels = '2 panouri'
+            config.openingType = 'Option 1' 
+        }
+        setIsReady(true)
+    },[])
+
+    useEffect(() => {if (!config.isComplete()) {router.push('/configurator/step-1')}}, [router])
     
     if (!config.isComplete()) {return null}
     
