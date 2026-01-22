@@ -63,7 +63,7 @@ export default function Step7Page() {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <h2 className="step-heading text-center">Alegeți <span className="text-primary">numărul de panouri</span></h2>
+      <h2 className="step-heading text-center">Alegeți <span className="text-primary">numarul de panouri</span></h2>
 
       <OptionCardGrid
         options={availablePanels}

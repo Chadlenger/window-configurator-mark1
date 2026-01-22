@@ -46,7 +46,7 @@ export default function OpeningTypeLegend() {
               <path d="M10 2L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
           </div>
-          <span>→ Oscillo-battant stânga: Se deschide și se basculează</span>
+          <span>→ Oscillo-battant stânga: Se deschide și se basculeaza</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 flex items-center justify-center">
@@ -57,7 +57,7 @@ export default function OpeningTypeLegend() {
               <path d="M10 2L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
           </div>
-          <span>→ Oscillo-battant dreapta: Se deschide și se basculează</span>
+          <span>→ Oscillo-battant dreapta: Se deschide și se basculeaza</span>
         </div>
       </div>
     </div>

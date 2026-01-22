@@ -120,6 +120,56 @@ body {
   cursor: not-allowed;
 }
 
+/* FORM BUTTONS STYLES */
+.btn-form {
+  position: relative;
+  display: inline-block;
+  padding: 0 24px;
+  height: 57px;
+  line-height: 57px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-form span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.btn-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  bottom: 0;
+  left: 0;
+  border-right: 50px solid transparent;
+  border-bottom: 57px solid #3D5BFF;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-form:hover::before {
+  transform: translateX(0);
+}
+
+.btn-form:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-form:disabled::before {
+  display: none;
+}
+
 
 /* STEP HEADING STYLES */
 .step-heading {

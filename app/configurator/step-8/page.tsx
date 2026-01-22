@@ -61,7 +61,7 @@ export default function Step8Page() {
   return (
     <div className="flex flex-col items-center">
       <h2 className="step-heading text-center">Alegeți <span className="text-primary">tipul de deschidere</span></h2>
-      <p className="text-center text-gray-600 mt-4 mb-10">Vă rugăm să alegeți dintre aceste tipuri diferite:</p>
+      <p className="text-center text-gray-600 mt-4 mb-10">Va rugam sa alegeți dintre aceste tipuri diferite:</p>
 
       <div 
         className="grid gap-10 w-full max-w-6xl"

@@ -1,7 +1,7 @@
 import { config } from './config'
 import { configFields } from '@/data/config-fields'
 
-export async function GeneratePDF() {
+async function createPDF() {
     const { default: jsPDF } = await import('jspdf')
 
     const doc = new jsPDF({orientation: 'portrait',unit: 'mm',format: 'a4'})
@@ -30,6 +30,11 @@ export async function GeneratePDF() {
           yPosition += 10
         }
     })
-    doc.save('devis-fenetre.pdf')
+    
+    return doc
+}
 
+export async function GeneratePDF() {
+    const doc = await createPDF()
+    doc.save('devis-fenetre.pdf')
 }
