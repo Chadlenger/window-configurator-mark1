@@ -3,26 +3,10 @@
 import Image from 'next/image'
 import {config} from '@/lib/config'
 import { configFields } from '@/data/config-fields'
-import { WindowTypeOptions } from '@/data/steps-options'
-import { getOpeningTypeOptions } from '@/data/opening-options'
-
-function getWindowImage(): string | null {
-  if (config.type === 'Fereastra fixa' || config.type === 'Usa Fereastra') {
-    const windowType = WindowTypeOptions.find(option => option.label === config.type)
-    return windowType?.img || null
-  }
-  
-  if (config.type && config.numberOfPanels && config.openingType) {
-    const openingOptions = getOpeningTypeOptions(config.type, config.numberOfPanels)
-    const selectedOpening = openingOptions.find(option => option.label === config.openingType)
-    return selectedOpening?.img || null
-  }
-  
-  return null
-}
+import { getWindowImage } from '@/data/opening-options'
 
 export default function ConfigDisplay() {
-  const windowImage = getWindowImage()
+  const windowImage = getWindowImage(config)
   
   return (
     <div className="flex items-center justify-center gap-24" style={{ fontFamily: 'Poppins, sans-serif' }}>

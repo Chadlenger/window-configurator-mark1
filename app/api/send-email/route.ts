@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-import { GeneratePDFBuffer } from '@/lib/pdf-generator-server'
+import { GeneratePDFBuffer } from '@/lib/pdf-generator'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,11 +13,10 @@ export async function POST(request: NextRequest) {
 
     const pdfBuffer = await GeneratePDFBuffer(configData)
 
-    // Configuration du transporteur email
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: false, // true pour 465, false pour les autres ports
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -32,7 +31,6 @@ export async function POST(request: NextRequest) {
       attachments: [{ filename: 'devis-fenetre.pdf', content: pdfBuffer }],
     }
 
-    // Envoyer l'email
     await transporter.sendMail(mailOptions)
 
     return NextResponse.json(

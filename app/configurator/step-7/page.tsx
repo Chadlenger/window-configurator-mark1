@@ -44,18 +44,11 @@ export default function Step7Page() {
     }
   }, [router, availablePanels.length, config.type])
 
-  useEffect(() => {
-    if (config.numberOfPanels) {
-      const openingOptions = getOpeningTypeOptions(config.type, config.numberOfPanels)
-    }
-  }, [config.numberOfPanels, config.type])
-
+  const findIndex = availablePanels.findIndex(
+    (option) => option.label === config.numberOfPanels
+  )
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(
-    availablePanels.findIndex(
-      (option) => option.label === config.numberOfPanels
-    ) !== -1 ? availablePanels.findIndex(
-      (option) => option.label === config.numberOfPanels
-    ) : null
+    findIndex !== -1 ? findIndex : null
   )
 
   const missingStep = getMissingStep()

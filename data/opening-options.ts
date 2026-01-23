@@ -43,6 +43,9 @@ const SlidingWindow3PanelsOptions = [
   { label: 'Option 5', img: '/images/opening-types-sliding-window-3-panels/Option_175.svg' },
 ]
 
+import { WindowTypeOptions } from './steps-options'
+import { WindowConfiguration } from '@/lib/models/WindowConfiguration'
+
 export type OpeningOption = {
   label: string
   img: string
@@ -55,4 +58,19 @@ export function getOpeningTypeOptions(windowType?: string, numberOfPanels?: stri
   if (windowType === 'Fereastra culisanta' && numberOfPanels === '2 panouri') {return SlidingWindow2PanelsOptions}
   if (windowType === 'Fereastra culisanta' && numberOfPanels === '3 panouri') {return SlidingWindow3PanelsOptions}
   return []
+}
+
+export function getWindowImage(config: WindowConfiguration): string | null {
+  if (config.type === 'Fereastra fixa' || config.type === 'Usa Fereastra') {
+    const windowType = WindowTypeOptions.find(option => option.label === config.type)
+    return windowType?.img || null
+  }
+  
+  if (config.type && config.numberOfPanels && config.openingType) {
+    const openingOptions = getOpeningTypeOptions(config.type, config.numberOfPanels)
+    const selectedOpening = openingOptions.find(option => option.label === config.openingType)
+    return selectedOpening?.img || null
+  }
+  
+  return null
 }

@@ -10,7 +10,7 @@ export default function final_step() {
     const router = useRouter()
     const [isReady, setIsReady] = useState(false)
     useEffect(() => {
-        const TEST_MODE = false //set to true if testing : )  
+        const TEST_MODE = true //set to true if testing : )  
         
         if (TEST_MODE && !config.isComplete()) {
             config.type = 'Fereastra simpla'  

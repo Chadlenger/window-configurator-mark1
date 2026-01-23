@@ -42,12 +42,11 @@ export default function Step8Page() {
     }
   }, [router, openingOptions.length])
 
+  const findIndex = openingOptions.findIndex(
+    (option) => option.label === config.openingType
+  )
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(
-    openingOptions.findIndex(
-      (option) => option.label === config.openingType
-    ) !== -1 ? openingOptions.findIndex(
-      (option) => option.label === config.openingType
-    ) : null
+    findIndex !== -1 ? findIndex : null
   )
 
   const missingStep = getMissingStep()
